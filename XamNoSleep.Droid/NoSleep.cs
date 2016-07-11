@@ -3,7 +3,7 @@ using Android.App;
 using Android.Views;
 using XamNoSleep.Interface;
 
-namespace XamNoSleep.Droid
+namespace XamNoSleep
 {
     public class NoSleep : INoSleep
     {

@@ -138,6 +138,16 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XamNoSleep.Interface\XamNoSleep.Interface.csproj">
+      <Project>{c600eede-55f5-44e1-977a-2902e6c3d702}</Project>
+      <Name>XamNoSleep.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XamNoSleep.iOS\XamNoSleep.iOS.csproj">
+      <Project>{9d879c38-7894-45c5-aabc-9eed3d3ac554}</Project>
+      <Name>XamNoSleep.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\Sample\Sample.csproj">
       <Project>{6AB13A78-8EDC-4EEE-96FA-06A76CB4A575}</Project>
       <Name>Sample</Name>

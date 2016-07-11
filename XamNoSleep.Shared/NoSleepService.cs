@@ -4,14 +4,9 @@ using XamNoSleep.Interface;
 #if __ANDROID__
 using Android.App;
 using Acr.Support.Android;
-using XamNoSleep.Droid;
 #endif
 
-#if __IOS__
-using XamNoSleep.iOS;
-#endif
-
-namespace XamNoSleep.Shared
+namespace XamNoSleep
 {
     public static class NoSleepService
     {
@@ -29,7 +24,7 @@ namespace XamNoSleep.Shared
 #elif __ANDROID__
             return Init((Application)Application.Context.ApplicationContext);
 #else
-            return new iOS.NoSleep();
+            return new NoSleep();
 #endif
         });
 

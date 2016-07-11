@@ -2,7 +2,7 @@
 using UIKit;
 using XamNoSleep.Interface;
 
-namespace XamNoSleep.iOS
+namespace XamNoSleep
 {
     public class NoSleep : INoSleep
     {

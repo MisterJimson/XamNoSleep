@@ -133,6 +133,14 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XamNoSleep.Droid\XamNoSleep.Droid.csproj">
+      <Project>{f8f65319-922e-4500-a738-fab4fe973c2b}</Project>
+      <Name>XamNoSleep.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XamNoSleep.Interface\XamNoSleep.Interface.csproj">
+      <Project>{c600eede-55f5-44e1-977a-2902e6c3d702}</Project>
+      <Name>XamNoSleep.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sample\Sample.csproj">
       <Project>{6AB13A78-8EDC-4EEE-96FA-06A76CB4A575}</Project>
       <Name>Sample</Name>
