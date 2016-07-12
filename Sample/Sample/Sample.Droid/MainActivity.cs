@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using XamNoSleep;
 
 namespace Sample.Droid
 {
@@ -13,6 +14,8 @@ namespace Sample.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            NoSleepService.Init(this);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());

@@ -2,7 +2,6 @@
 
 #if __ANDROID__
 using Android.App;
-using Acr.Support.Android;
 #endif
 
 namespace XamNoSleep
@@ -21,7 +20,12 @@ namespace XamNoSleep
 #if PCL
             throw new ArgumentException("This is the PCL library, not the platform library.  You must install the nuget package in your main application project");
 #elif __ANDROID__
-            return Init((Application)Application.Context.ApplicationContext);
+            if (instance == null)
+            {
+                throw new ArgumentException("You need to call NoSleepService.Init from your first Android activity!");
+            }
+
+            return instance;
 #else
             return new NoSleep();
 #endif
@@ -29,21 +33,10 @@ namespace XamNoSleep
 
 #if __ANDROID__
 
-        public static NoSleep Init(Func<Activity> topActivityFactory) 
+        public static void Init(Activity activity)
         {
-            return new NoSleep(topActivityFactory);
-        }
-
-        public static NoSleep Init(Application app) 
-        {
-            ActivityLifecycleCallbacks.Register(app);
-            return Init(() => ActivityLifecycleCallbacks.CurrentTopActivity);
-        }
-
-        public static NoSleep Init(Activity activity) 
-        {
-            ActivityLifecycleCallbacks.Register(activity);
-            return Init(() => ActivityLifecycleCallbacks.CurrentTopActivity);
+            NoSleepLifecycleCallbacks.Register(activity);
+            instance = new NoSleep(() => NoSleepLifecycleCallbacks.CurrentTopActivity);
         }
 #endif
     }

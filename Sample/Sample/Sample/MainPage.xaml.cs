@@ -13,6 +13,7 @@ namespace Sample
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            NoSleepService.Instance.AllowSleep = false;
         }
 
         protected override void OnDisappearing()

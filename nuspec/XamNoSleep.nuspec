@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MJ.XamNoSleep</id>
+    <version>1.0.0</version>
+    <title>XamNoSleep</title>
+    <summary>Xamarin library to manage screen timeout</summary>
+    <description>
+      Xamarin library to manage screen timeout
+    </description>
+    <authors>Jason Rai</authors>
+    <owners>Jason Rai</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- PCL -->
+    <file src="..\XamNoSleep\bin\Release\XamNoSleep.*"
+          target="lib\portable-win+net45+wp8+win8+wpa81" />
+
+    <!-- android -->
+    <file src="..\XamNoSleep.Droid\bin\Release\XamNoSleep.*"
+          target="lib\MonoAndroid10" />
+
+    <!-- ios -->
+    <file src="..\XamNoSleep.iOS\bin\Release\XamNoSleep.*"
+          target="lib\Xamarin.iOS10" />
+  </files>
+</package>

@@ -7,21 +7,32 @@ namespace XamNoSleep
     public class NoSleep : INoSleep
     {
         protected internal Func<Activity> TopActivityFunc { get; set; }
+        protected bool allowSleep;
 
-        public NoSleep(Func<Activity> getTopActivity)
+        public NoSleep(Func<Activity> topActivityFunc)
         {
-            this.TopActivityFunc = getTopActivity;
+            this.TopActivityFunc = topActivityFunc;
         }
 
         public bool AllowSleep
         {
-            get { return ((TopActivityFunc().Window.Attributes.Flags & WindowManagerFlags.KeepScreenOn) != 0); }
+            get { return allowSleep; }
             set
             {
-                if (value)
-                    TopActivityFunc().Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
-                else
-                    TopActivityFunc().Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+                allowSleep = value; 
+                AssessNoSleep();
+            }
+        }
+
+        internal void AssessNoSleep()
+        {
+            if (allowSleep)
+            {
+                TopActivityFunc().Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
+            }
+            else
+            {
+                TopActivityFunc().Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             }
         }
     }
