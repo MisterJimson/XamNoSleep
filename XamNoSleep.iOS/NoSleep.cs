@@ -1,6 +1,5 @@
 ﻿using System;
 using UIKit;
-using XamNoSleep.Interface;
 
 namespace XamNoSleep
 {

@@ -1,5 +1,4 @@
 ﻿using System;
-using XamNoSleep.Interface;
 
 #if __ANDROID__
 using Android.App;

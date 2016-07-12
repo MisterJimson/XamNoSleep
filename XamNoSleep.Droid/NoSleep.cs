@@ -1,7 +1,6 @@
 using System;
 using Android.App;
 using Android.Views;
-using XamNoSleep.Interface;
 
 namespace XamNoSleep
 {

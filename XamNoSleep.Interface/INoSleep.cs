@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XamNoSleep.Interface
+namespace XamNoSleep
 {
     public interface INoSleep
     {

@@ -23,6 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample\Sam
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		XamNoSleep.Shared\XamNoSleep.Shared.projitems*{2546de3c-f59d-4835-a030-cacd373de2ee}*SharedItemsImports = 4
 		XamNoSleep.Shared\XamNoSleep.Shared.projitems*{98a87ce2-0620-46bc-9cf9-897eab135842}*SharedItemsImports = 13
 		XamNoSleep.Shared\XamNoSleep.Shared.projitems*{9d879c38-7894-45c5-aabc-9eed3d3ac554}*SharedItemsImports = 4
 		XamNoSleep.Shared\XamNoSleep.Shared.projitems*{f8f65319-922e-4500-a738-fab4fe973c2b}*SharedItemsImports = 4
