@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>MJ.XamNoSleep</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>XamNoSleep</title>
     <summary>Xamarin library to manage screen timeout</summary>
     <description>
@@ -10,6 +10,8 @@
     </description>
     <authors>Jason Rai</authors>
     <owners>Jason Rai</owners>
+    <licenseUrl>https://github.com/MisterJimson/XamNoSleep/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MisterJimson/XamNoSleep</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <group targetFramework="MonoAndroid10">
