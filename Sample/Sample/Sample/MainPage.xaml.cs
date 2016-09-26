@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 using XamNoSleep;
 
 namespace Sample
@@ -10,10 +11,13 @@ namespace Sample
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            NoSleepService.Instance.AllowSleep = false;
+            using (NoSleepService.Instance.StayAwakeDuring())
+            {
+                await Task.Delay(30 * 1000);
+            }
         }
 
         protected override void OnDisappearing()
