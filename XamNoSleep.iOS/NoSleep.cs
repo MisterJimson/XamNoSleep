@@ -3,9 +3,9 @@ using UIKit;
 
 namespace XamNoSleep
 {
-    public class NoSleep : INoSleep
+    public class NoSleep : AbstractNoSleep, INoSleep
     {
-        public bool AllowSleep
+        public override bool AllowSleep
         {
             get { return !UIApplication.SharedApplication.IdleTimerDisabled; }
             set { UIApplication.SharedApplication.IdleTimerDisabled = !value; }

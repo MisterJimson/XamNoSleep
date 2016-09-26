@@ -4,7 +4,7 @@ using Android.Views;
 
 namespace XamNoSleep
 {
-    public class NoSleep : INoSleep
+    public class NoSleep : AbstractNoSleep, INoSleep
     {
         protected internal Func<Activity> TopActivityFunc { get; set; }
         protected bool allowSleep;
@@ -14,7 +14,7 @@ namespace XamNoSleep
             this.TopActivityFunc = topActivityFunc;
         }
 
-        public bool AllowSleep
+        public override bool AllowSleep
         {
             get { return allowSleep; }
             set
