@@ -26,13 +26,20 @@ namespace XamNoSleep
 
         internal void AssessNoSleep()
         {
+            Activity activity = TopActivityFunc();
             if (allowSleep)
             {
-                TopActivityFunc().Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
+                activity.RunOnUiThread(() =>
+                {
+                    activity.Window.ClearFlags(WindowManagerFlags.KeepScreenOn);
+                });
             }
             else
             {
-                TopActivityFunc().Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+                activity.RunOnUiThread(() =>
+                {
+                    TopActivityFunc().Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+                });
             }
         }
     }
