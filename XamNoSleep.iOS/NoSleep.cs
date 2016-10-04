@@ -7,8 +7,17 @@ namespace XamNoSleep
     {
         public override bool AllowSleep
         {
-            get { return !UIApplication.SharedApplication.IdleTimerDisabled; }
-            set { UIApplication.SharedApplication.IdleTimerDisabled = !value; }
+            get 
+			{ 
+				return !UIApplication.SharedApplication.IdleTimerDisabled; 
+			}
+            set 
+			{
+				UIApplication.SharedApplication.InvokeOnMainThread(() => 
+				{
+					UIApplication.SharedApplication.IdleTimerDisabled = !value;
+				});
+			}
         }
     }
 }
