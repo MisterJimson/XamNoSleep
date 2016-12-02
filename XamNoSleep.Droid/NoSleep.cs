@@ -7,7 +7,7 @@ namespace XamNoSleep
     public class NoSleep : AbstractNoSleep, INoSleep
     {
         protected internal Func<Activity> TopActivityFunc { get; set; }
-        protected bool allowSleep;
+        protected bool allowSleep = true;
 
         public NoSleep(Func<Activity> topActivityFunc)
         {
